@@ -32,6 +32,11 @@ public class Combo implements IPrototype<Combo>{
         return this.extraSideDishes.size() * 5;
     }
 
+
+
+
+
+
     @Override
     public Combo clone() {
         Combo clone = new Combo(this.name, this.price, this.extraDrinks, this.extraSideDishes , this.aditionals);
@@ -54,6 +59,14 @@ public class Combo implements IPrototype<Combo>{
 
     public void setAditionals(ArrayList<Aditional> aditionals) {
         this.aditionals = aditionals;
+    }
+
+    public ECombo getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     @Override
@@ -100,17 +113,26 @@ public class Combo implements IPrototype<Combo>{
         }
 
         public ComboBuilder addDrink(Drink bebida){
+            if(this.extraDrinks.size()>0){ //la primer bebida es gratis, si no es vacio entonces se cobra
+                this.price+=3;
+            }
             this.extraDrinks.add(bebida);
+          
             return this;
         }
 
         public ComboBuilder addSideDish(SideDish platillo){
+            if(this.extraSideDishes.size()>0){
+                this.price+=5;
+            }
             this.extraSideDishes.add(platillo);
+
             return this;
         }
 
         public ComboBuilder addAditional(Aditional adicional){
             this.aditionals.add(adicional);
+            this.price+=adicional.price; //los postres no están incluidos, por lo tanto siempre se cobran
             return this;
         }
 
