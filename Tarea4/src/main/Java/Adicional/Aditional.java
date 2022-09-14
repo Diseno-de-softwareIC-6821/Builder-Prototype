@@ -9,7 +9,10 @@ public abstract class Aditional implements IPrototype<Aditional>{
         this.price = price;
     }
 
-
+    @Override
+    public abstract Aditional clone();
+    @Override
+    public abstract Aditional deepClone();
 
 
 }
