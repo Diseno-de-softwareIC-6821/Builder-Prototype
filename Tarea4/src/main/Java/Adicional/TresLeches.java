@@ -2,16 +2,16 @@ package Adicional;
 
 import Prototype.IPrototype;
 
-public class TresLeches<T> extends Aditional implements IPrototype {
+public class TresLeches extends Aditional  {
     public TresLeches(int price) {
         super(price);
     }
     @Override
-    public T clone() {
-        return null;
+    public TresLeches clone() {
+        return new TresLeches(this.price);
     };
     @Override
-    public T deepClone(){
+    public TresLeches deepClone(){
         return null;
     }
 

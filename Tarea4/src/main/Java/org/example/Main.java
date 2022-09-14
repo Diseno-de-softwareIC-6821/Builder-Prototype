@@ -13,9 +13,6 @@ public class Main {
         }
 
 
-        System.out.println("Hello world!");
-        System.out.println("tomela tomela");
-        System.out.println("echele miel");
-        System.out.println("Viva diseño");
+
     }
 }

@@ -2,18 +2,20 @@ package Adicional;
 
 import Prototype.IPrototype;
 
-public class PostreDeManzana<T> extends Aditional implements IPrototype {
+public class PostreDeManzana extends Aditional {
     public PostreDeManzana(int price) {
         super(price);
     }
 
     @Override
-    public T clone() {
-        return null;
+    public PostreDeManzana clone() {
+        PostreDeManzana clone = new PostreDeManzana(this.price);
+        return clone;
     }
 
     @Override
-    public T deepClone() {
+    public PostreDeManzana deepClone() {
+
         return null;
     }
 }
